@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cyclope</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="magnetometer">Field strength</string>
+    <string name="select_ion">Select ion</string>
+    <string name="cyclotrone_freq">Cyclotrone freq.</string>
+    <string name="run_magnetometer">Magnetometer</string>
+    <string name="mctesla">uT</string>
+    <string name="hz">Hz</string>
+
+</resources>

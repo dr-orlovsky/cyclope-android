@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ions_name_array">
+        <item>Magnesium</item>
+        <item>Barium</item>
+    </string-array>
+</resources>

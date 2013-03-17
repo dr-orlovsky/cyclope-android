@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".MainActivity" >
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/magnetometerValue"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textView3"
+        android:gravity="center_vertical"
+        android:text="@string/magnetometer"
+        android:layout_margin="5dp"
+        android:textAppearance="?android:attr/textAppearanceButton" />
+    <EditText
+        android:id="@+id/magnetometerValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:layout_toLeftOf="@+id/textViewUnits1"
+        android:layout_toRightOf="@+id/textView1"
+        android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="right|center_vertical"
+        android:inputType="none" >
+    </EditText>
+    <TextView
+        android:id="@+id/textViewUnits1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/magnetometerValue"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/mctesla"
+        android:textAppearance="?android:attr/textAppearanceButton" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ionSpinner"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:gravity="center_vertical"
+        android:text="@string/select_ion"
+        android:layout_margin="5dp"
+        android:textAppearance="?android:attr/textAppearanceButton" />
+    <Spinner
+        android:id="@+id/ionSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/magnetometerValue" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cyclotroneFreq"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:gravity="center_vertical"
+        android:text="@string/cyclotrone_freq"
+        android:layout_margin="5dp"
+        android:textAppearance="?android:attr/textAppearanceButton" />
+    <EditText
+        android:id="@+id/cyclotroneFreq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ionSpinner"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toLeftOf="@+id/textViewUnits2"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:ems="10"
+        android:gravity="right|center_vertical"
+        android:layout_margin="5dp"
+        android:inputType="none" >
+    </EditText>
+    <TextView
+        android:id="@+id/textViewUnits2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cyclotroneFreq"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/hz"
+        android:textAppearance="?android:attr/textAppearanceButton" />
+    
+    <Switch
+        android:id="@+id/runMagnetometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView3"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/run_magnetometer" />
+    
+</RelativeLayout>
