@@ -1,9 +1,34 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/menu_settings"
+        android:id="@+id/activity_switch"
+        android:actionLayout="@layout/activity_switch"
+        android:showAsAction="always"
+        android:title="@string/active"
+    />
+    
+    <item
+        android:id="@+id/menu_pause"
         android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/menu_settings"/>
+        android:showAsAction="always|withText"
+        android:icon="@drawable/ic_pause"
+        android:title="@string/menu_pause"
+    />
+    
+    <item
+        android:id="@+id/menu_shift"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText"
+        android:icon="@drawable/ic_shift"
+        android:title="@string/menu_shift"
+    />
+    
+    <item
+        android:id="@+id/menu_integrate"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText"
+        android:icon="@drawable/ic_integrate"
+        android:title="@string/menu_integrate"
+    />
 
 </menu>

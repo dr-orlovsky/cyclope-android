@@ -4,6 +4,11 @@
     <string name="app_name">Cyclope</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="menu_shift">Shift</string>
+    <string name="menu_integrate">Integrate</string>
+    <string name="menu_raw">Realtime</string>
+    <string name="menu_pause">Hold</string>
+    <string name="menu_continue">Unhold</string>
     <string name="magnetometer">Field strength</string>
     <string name="select_ion">Select ion</string>
     <string name="cyclotrone_freq">Cyclotrone freq.</string>
@@ -12,4 +17,36 @@
     <string name="hz">Hz</string>
     <string name="coefficient">Correction coefficient</string>
 
+    <string-array name="ion_charges">
+		<item>± 1</item>
+		<item>± 2</item>
+		<item>± 3</item>
+	</string-array>
+	
+    <string-array name="field_units">
+        <item>Tesla (µT)</item>
+        <item>Gauss (mG)</item>
+        <item>gammas (kγ)</item>
+        <item>H⁺ NMR units (Hz)</item>
+    </string-array>
+
+	<string name="ion_charge">Ion charge</string>
+	<string name="freq_description_format">%1$s harmonic (unshifted)</string>
+	<string name="freq_description_shift_format">%1$s harmonic, shifted %2$d Hz</string>
+	<string name="field_strength">Magnetic field strength</string>
+	<string name="interference">Magnetic interference</string>
+	<string name="ion_weight_format">Mol. weight: %.2f</string>
+	<string name="freq_format">%.1f Hz</string>
+	<string name="active">Active</string>
+	<string name="prev">Previous</string>
+	<string name="next">Next</string>
+	
+	<string name="toast_first_harmonic">This is the least possible harmonic</string>
+	<string name="toast_last_harmonic">This is the last harmonic</string>
+	<string name="toast_nomagnet">No magnetometer present on device</string>
+	<string name="toast_wrong_charge">This (zwitter)ion can\'t has such charge</string>
+	
+	<string name="shift_dlg_title">Set "red shift" coefficient value:</string>
+	<string name="dialog_set">Set</string>
+	<string name="dialog_cancel">Cancel</string>
 </resources>

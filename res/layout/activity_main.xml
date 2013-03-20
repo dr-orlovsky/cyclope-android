@@ -1,149 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="5dp"
-    tools:context=".MainActivity" >
-    
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/magnetometerValue"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/textView3"
-        android:gravity="center_vertical"
-        android:text="@string/magnetometer"
-        android:layout_margin="5dp"
-        android:textAppearance="?android:attr/textAppearanceButton" />
-    <EditText
-        android:id="@+id/magnetometerValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_margin="5dp"
-        android:layout_toLeftOf="@+id/textViewUnits1"
-        android:layout_toRightOf="@+id/textView1"
-        android:ems="10"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:gravity="right|center_vertical"
-        android:inputType="none" >
-    </EditText>
-    <TextView
-        android:id="@+id/textViewUnits1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/magnetometerValue"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="5dp"
-        android:gravity="center_vertical"
-        android:text="@string/mctesla"
-        android:textAppearance="?android:attr/textAppearanceButton" />
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ionSpinner"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:gravity="center_vertical"
-        android:text="@string/select_ion"
-        android:layout_margin="5dp"
-        android:textAppearance="?android:attr/textAppearanceButton" />
+        android:layout_above="@+id/ionSpinner"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:id="@+id/fieldLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+	        <TextView
+	            android:id="@+id/fieldLabel"
+	            android:layout_width="wrap_content"
+	            android:layout_height="fill_parent"
+	            android:text=""
+	            android:gravity="center_vertical|right"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	        <Spinner
+	            android:id="@+id/fieldUnits"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:entries="@array/field_units"
+	            android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fieldLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/field_strength"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/notificationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/interference"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
     <Spinner
         android:id="@+id/ionSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_margin="5dp"
-        android:layout_below="@+id/magnetometerValue" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/cyclotroneFreq"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView2"
-        android:gravity="center_vertical"
-        android:text="@string/cyclotrone_freq"
-        android:layout_margin="5dp"
-        android:textAppearance="?android:attr/textAppearanceButton" />
-    <EditText
-        android:id="@+id/cyclotroneFreq"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ionSpinner"
-        android:layout_toRightOf="@+id/textView3"
-        android:layout_toLeftOf="@+id/textViewUnits2"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:ems="10"
-        android:gravity="right|center_vertical"
-        android:layout_margin="5dp"
-        android:inputType="none" >
-    </EditText>
-    <TextView
-        android:id="@+id/textViewUnits2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/cyclotroneFreq"
-        android:layout_alignParentRight="true"
-        android:layout_margin="5dp"
-        android:gravity="center_vertical"
-        android:text="@string/hz"
-        android:textAppearance="?android:attr/textAppearanceButton" />
+        android:layout_width="match_parent"
+        android:layout_height="40dp" 
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_above="@+id/centerAnchor"
+        android:background="@android:drawable/dark_header"
+        />
+    <Space
+        android:id="@+id/centerAnchor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
     
-    <Switch
-        android:id="@+id/runMagnetometer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView3"
-        android:layout_margin="5dp"
-        android:gravity="center_vertical"
-        android:text="@string/run_magnetometer" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ionSpinner" >
 
-    <EditText
-        android:id="@+id/numberPicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/cyclotroneFreq"
-        android:layout_alignRight="@+id/cyclotroneFreq"
-        android:layout_below="@+id/runMagnetometer" 
-        android:inputType="numberDecimal" />
+        <TextView
+            android:id="@+id/frequencyLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/freq_format"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_alignBottom="@+id/numberPicker"
-        android:layout_alignRight="@+id/runMagnetometer"
-        android:layout_alignTop="@+id/numberPicker"
-        android:layout_margin="5dp"
-        android:layout_marginTop="53dp"
-        android:gravity="center_vertical"
-        android:text="@string/hz"
-        android:textAppearance="?android:attr/textAppearanceButton" />
+        <TextView
+            android:id="@+id/ionWeightLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:text="@string/ion_weight_format"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/TextView02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/TextView01"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_alignTop="@+id/TextView01"
-        android:layout_margin="5dp"
-        android:gravity="center_vertical"
-        android:text="@string/coefficient"
-        android:textAppearance="?android:attr/textAppearanceButton" />
-    
+        <TextView
+            android:id="@+id/ionChargeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/ionChargeSpinner"
+            android:text="@string/ion_charge"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        
+        <ImageButton
+            android:id="@+id/prevButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/frequencyLabel"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/prev"
+            android:onClick="onPrevClicked"
+            android:src="@drawable/ic_prev" />
+
+        <ImageButton
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/frequencyLabel"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/next"
+            android:onClick="onNextClicked"
+            android:src="@drawable/ic_next" />
+
+        <Spinner 
+            android:id="@+id/ionChargeSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:entries="@array/ion_charges"
+            android:drawSelectorOnTop="true"
+            />
+
+        <TextView
+            android:id="@+id/detailsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frequencyLabel"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/freq_description_format"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </RelativeLayout>
+
 </RelativeLayout>
