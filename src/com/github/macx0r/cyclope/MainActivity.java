@@ -35,13 +35,31 @@ public class MainActivity extends Activity implements SensorEventListener {
 		new IonInfo(40.078, 2, "Calcium", "Ca²⁺"),
 		new IonInfo(06.941, 1, "Lithium", "Li⁺"),
 		new IonInfo(22.989769, 1, "Sodium", "Na⁺"),
-		new IonInfo(39.0983, 1, "Potassium", "K⁺")
+		new IonInfo(39.0983, 1, "Potassium", "K⁺"),
+
+		new IonInfo(65.38, 2, "Zinc", "Zn²⁺"),
+		new IonInfo(63.546, 2, "Copper", "Cu²⁺"),
+		new IonInfo(207.2, 2, "Lead ²⁺", "Pb²⁺"),
+		new IonInfo(207.2, 4, "Lead ⁴⁺", "Pb⁴⁺"),
+
+		new IonInfo(103.12, 1, "GABA ⁺", ""),
+		new IonInfo(147.13, 1, "Glu ⁺", ""),
+		new IonInfo(147.13, 2, "Glu ²⁺", ""),
+		new IonInfo(153.18, 1, "Dopamine ⁺", ""),
+		new IonInfo(153.18, 2, "Dopamine ²⁺", ""),
+		new IonInfo(169.18, 1, "Norepinephrine ⁺", ""),
+		new IonInfo(169.18, 2, "Norepinephrine ²⁺", ""),
+		new IonInfo(169.18, 3, "Norepinephrine ³⁺", ""),
+		new IonInfo(176.22, 1, "5-HT ⁺", ""),
+		new IonInfo(176.22, 2, "5-HT ²⁺", ""),
+		new IonInfo(146.21, 1, "Acetylcholine", "")
 	};
 	
 	Switch mRunMagnetometer;
 	Spinner mIonSpinner;
 	EditText mMFValue;
 	EditText mCFValue;
+	EditText mCoeffPicker;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +99,9 @@ public class MainActivity extends Activity implements SensorEventListener {
 		mMFValue.setFocusable(false);
 		mCFValue.setFocusable(false);
 		
+		mCoeffPicker = (EditText) findViewById(R.id.numberPicker);
+		mCoeffPicker.setText("0");
+		
 		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		if ((mMagneticSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) != null) {
 			this.startMagnetometer();
@@ -88,7 +109,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 			Toast.makeText(getApplicationContext(), "No magnetometer present on device", Toast.LENGTH_LONG).show();
 			mMFValue.setText("–");
 		}
-	
+
 		mRunMagnetometer.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -168,6 +189,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 	
 	public void updateCyclotronicFrequency() {
 		double freq = MainActivity.calculateCyclotroneFrequency(mIonIndex, mMagneticFieldStrength);
+		//freq = freq + Double.parseDouble(mCoeffPicker.getText().toString());
 		mCFValue.setText(String.format("%.2f", freq));
 	}
 

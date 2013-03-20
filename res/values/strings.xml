@@ -10,5 +10,6 @@
     <string name="run_magnetometer">Magnetometer</string>
     <string name="mctesla">uT</string>
     <string name="hz">Hz</string>
+    <string name="coefficient">Correction coefficient</string>
 
 </resources>

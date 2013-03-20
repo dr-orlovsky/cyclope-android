@@ -110,5 +110,40 @@
         android:layout_margin="5dp"
         android:gravity="center_vertical"
         android:text="@string/run_magnetometer" />
+
+    <EditText
+        android:id="@+id/numberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cyclotroneFreq"
+        android:layout_alignRight="@+id/cyclotroneFreq"
+        android:layout_below="@+id/runMagnetometer" 
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignBottom="@+id/numberPicker"
+        android:layout_alignRight="@+id/runMagnetometer"
+        android:layout_alignTop="@+id/numberPicker"
+        android:layout_margin="5dp"
+        android:layout_marginTop="53dp"
+        android:gravity="center_vertical"
+        android:text="@string/hz"
+        android:textAppearance="?android:attr/textAppearanceButton" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView01"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignTop="@+id/TextView01"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/coefficient"
+        android:textAppearance="?android:attr/textAppearanceButton" />
     
 </RelativeLayout>
