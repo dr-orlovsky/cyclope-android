@@ -59,6 +59,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_above="@+id/centerAnchor"
+        android:spinnerMode="dialog"
         android:background="@android:drawable/dark_header"
         />
     <Space

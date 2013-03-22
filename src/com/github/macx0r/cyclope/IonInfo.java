@@ -29,6 +29,7 @@ public final class IonInfo {
 	
 
 	static IonInfo[] mainIons = {
+		new IonInfo(01.007, 1, "Proton", "H⁺"),
 		new IonInfo(06.941, 1, "Lithium", "Li⁺"),
 		new IonInfo(22.989769, 1, "Sodium", "Na⁺"),
 		new IonInfo(39.0983, 1, "Potassium", "K⁺"),
