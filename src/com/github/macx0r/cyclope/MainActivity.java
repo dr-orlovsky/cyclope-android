@@ -315,7 +315,7 @@ public class MainActivity extends Activity implements SensorEventListener, OnChe
 			
 		if (mCalculations) {
 			label = (TextView) findViewById(R.id.frequencyLabel);
-			label.setText(String.format(getString(R.string.freq_format), mCycloFrequency + mRedShift));
+			label.setText(String.format(getString(R.string.freq_format), mCycloFrequency - mRedShift));
 		}
 		
 		if (all) {
